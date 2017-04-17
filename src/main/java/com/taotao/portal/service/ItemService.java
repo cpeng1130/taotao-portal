@@ -8,5 +8,6 @@ import com.taotao.pojo.TbItem;
 public interface ItemService {
 
 	TbItem getItemById(Long itemId);
-	
+	String getItemDescById(long itemId);
+	String getItemParamById(Long itemId);
 }
