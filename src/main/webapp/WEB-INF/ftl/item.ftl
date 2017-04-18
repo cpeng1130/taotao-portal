@@ -53,7 +53,7 @@
 	<li id="summary-price">
 		<div class="dt">æ·˜&nbsp;æ·˜&nbsp;ä»·ï¼š</div>
 		<div class="dd">
-			<strong class="p-price"  id="jd-price">ï¿¥<fmt:formatNumber groupingUsed="false" maxFractionDigits="2" minFractionDigits="2" value="${item.price / 100 }"/> </strong>
+			<strong class="p-price"  id="jd-price">ï¿¥${item.price / 100 }> </strong>
 			<a id="notice-downp" href="#none" target="_blank" clstag="shangpin|keycount|product|jiangjia">(é™�ä»·é€šçŸ¥)</a>
 		</div>
 	</li>
