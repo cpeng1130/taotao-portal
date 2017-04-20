@@ -5,13 +5,13 @@ var TT = TAOTAO = {
 			return ;
 		}
 		$.ajax({
-			url : "http://sso.taotao.com/user/query/" + _ticket,
+			url : "http://localhost:8084/user/token/" + _ticket,
 			dataType : "jsonp",
 			type : "GET",
 			success : function(data){
 				if(data.status == 200){
-					var _data = JSON.parse(data.data);
-					var html =_data.username+"，欢迎来到淘淘！<a href=\"http://www.taotao.com/user/logout.html\" class=\"link-logout\">[退出]</a>";
+					var username = JSON.parse(data.data.username);
+					var html =username+"，欢迎来到淘淘！<a href=\"http://www.taotao.com/user/logout.html\" class=\"link-logout\">[退出]</a>";
 					$("#loginbar").html(html);
 				}
 			}
