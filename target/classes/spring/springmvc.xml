@@ -8,6 +8,8 @@
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 	<!-- 配置包扫描器 -->
 	<context:component-scan base-package="com.taotao.portal.controller"></context:component-scan>
+	
+	<context:property-placeholder location="classpath:properties/*.properties"/>
 	<!-- 配置注解驱动 -->
 	<mvc:annotation-driven />
 	<!-- 视图解析器 -->
@@ -16,5 +18,11 @@
 		<property name = "prefix" value="/WEB-INF/jsp/" />
 		<property name = "suffix" value=".jsp" />
 	</bean>
-	
+	<mvc:interceptors>
+		<mvc:interceptor>
+ 		<mvc:mapping path="/order/**"></mvc:mapping> 
+
+			<bean class="com.taotao.portal.LoginInterceptor"></bean>
+		</mvc:interceptor>
+	</mvc:interceptors>
 </beans>
