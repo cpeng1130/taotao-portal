@@ -14,5 +14,5 @@ import com.taotao.portal.pojo.CartItem;
 public interface CartService {
 
 	TaotaoResult addCart(Long itemId,Integer num,HttpServletRequest request,HttpServletResponse response);
-	List<CartItem> getCartItemList(HttpServletRequest request);
+	List<CartItem> getCartItems(HttpServletRequest request);
 }

@@ -31,8 +31,11 @@ public class CartServiceImpl implements CartService {
 		boolean haveFlg=false;
 		List<CartItem> itemList = getCartItemList(request);
 		for(CartItem cartItem :itemList){
-			if(cartItem.getId()==itemId){
-				cartItem.setNum(cartItem.getNum()+num);
+			if(cartItem.getId().longValue()==itemId){
+				if(cartItem.getNum()==null){
+					cartItem.setNum(0+num);
+				}
+				//cartItem.setNum(cartItem.getNum()+num);
 				haveFlg=true;
 				break;
 			}
@@ -56,7 +59,7 @@ public class CartServiceImpl implements CartService {
 		
 		return TaotaoResult.ok();
 	}
-
+	
 	private List<CartItem> getCartItemList(HttpServletRequest request) {
 
 		try {
@@ -67,5 +70,10 @@ public class CartServiceImpl implements CartService {
 			return new ArrayList<CartItem>();
 		}
 
+	}
+	
+	public List<CartItem> getCartItems(HttpServletRequest request){
+		List<CartItem> list = getCartItemList(request);
+		return list;
 	}
 }
